@@ -7,11 +7,12 @@ ul {
 
 li {
   padding: 0.5rem 1rem;
+  color: white;
 }
 
-li:nth-child(odd) {
+/* li:nth-child(odd) {
   background-color: #f8f8f8;
-}
+} */
 
 /* input component styles */
 form {

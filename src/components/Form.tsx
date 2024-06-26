@@ -1,5 +1,5 @@
 import React from "react";
-import { Message } from "./message";
+import { Message } from "../types/message";
 
 // denfine the type for the component's props
 

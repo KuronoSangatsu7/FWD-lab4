@@ -35,7 +35,7 @@ The main differences with Vite are that it is configured out-of-the-box with the
 
 ## Task
 
-To practice some Svelte, let us rewrite the task of the previous lab (real-time chat app) using Svelte and SFCs.
+To practice some React, let us rewrite the task of the previous lab (real-time chat app) using React and RFCs.
 
 Let's start by defining the styles of the application, in the App.css file :
 
@@ -96,7 +96,7 @@ form > button {
 
 Now, we define a type for messages that will be used elsewhere:
 
-**`message.tsx`**:
+**`message.ts`**:
 
 ```javascript
 export interface Message {
@@ -185,12 +185,6 @@ export default function Form(props: Props) {
     </form>
   );
 }
-
-```
-
-
-
-export  default  Form;
 
 ````
 

@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
 // import types
-import { Message } from "./message.tsx";
+import { Message } from "./types/message.tsx";
 // import components
-import UserMessage from "./UserMessage.tsx";
-import Form from "./Form.tsx";
+import UserMessage from "./components/UserMessage.tsx";
+import Form from "./components/Form.tsx";
 // import socket.io client module
 import { io } from "socket.io-client";
 
 function App() {
-  const [messages, setMessages] = React.useState<Message[]>([]);
+  const [messages, setMessages] = React.useState<string[]>([]);
 
   // connect to web-socket api
   const socket = io("https://fwd.innopolis.university");
@@ -17,7 +17,7 @@ function App() {
   // effect to execute each time 'messages' state is updated
   React.useEffect(() => {
     // define socket events handlers
-    function onMessage(msg: Message) {
+    function onMessage(msg: string) {
       console.log([...messages, msg]);
       setMessages([...messages, msg]);
     }
@@ -33,7 +33,7 @@ function App() {
 
   function sendMessage(msg: Message) {
     console.log("name", msg);
-    socket.emit("chat message", msg);
+    socket.emit("chat message", `${msg.username}: ${msg.message}`);
   }
 
   return (
